@@ -1,0 +1,48 @@
+﻿<div ng-app="hddApplication">
+
+    <div ng-controller="hddApplicationController">
+
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Less 10Mb</th>
+                    <th>10-50Mb</th>
+                    <th>More than 100Mb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{less10}}</td>
+                    <td>{{from10to50}}</td>
+                    <td>{{morethan100}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+
+        <p>Current path: {{currentpath}}</p>
+                
+        <div style="width:100%;">
+           <a id="upBtn" href="" ng-click="onUpClick()">__..__</a>
+           <a href="" ng-repeat="folder in folders" ng-click="onFolderClick(folder)" style="display: block;">{{folder}} </a>
+           <a ng-repeat="file in files" style="display: block;">{{file}} </a>
+
+        </div>
+
+
+        <div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/app/app.js")
+    @Scripts.Render("~/app/Controllers/hddApplicationController.js")
+}

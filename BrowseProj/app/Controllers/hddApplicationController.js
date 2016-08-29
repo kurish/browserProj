@@ -83,33 +83,26 @@
         {
             $scope.patharr.splice(-1, 1);
         }
-        console.log("after split: ", $scope.patharr);
-
+        
         if ($scope.patharr.length > 1)
         {
-            console.log("$scope.patharr.length > 1 ", $scope.patharr);
+
             $scope.patharr.splice($scope.patharr.length - 1, 1);
-            
             if (($scope.patharr.length == 1) && ($scope.patharr[0].indexOf("\\") == -1))
             {
                 $scope.patharr[0] += "\\";
             }
             $scope.currentpath = $scope.patharr.join('\\');
-            console.log("currentpath after $scope.patharr.join('\\'): ", $scope.currentpath);
             browse();
-            
-         
+          
         }
         else
         {
-            console.log("$scope.patharr.length ", $scope.patharr.length);
             if ($scope.patharr.length <= 1)
             {
-                console.log("getLocalDisks");
                 getLocalDisks();
             }
-            
-           
+         
         }
         
     }
